@@ -1,0 +1,35 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* ===== Dashboard Layout ===== */
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background: #f5f7f6;
+}
+
+/* ===== Main Content Area ===== */
+.main {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    background: #f5f7f6;
+}
+
+/* Optional smooth scrollbar */
+.main::-webkit-scrollbar {
+    width: 6px;
+}
+
+.main::-webkit-scrollbar-thumb {
+    background-color: #cbd5cf;
+    border-radius: 8px;
+}
+
+.main2{
+    display: flex;
+    flex-direction: row;
+    gap:10px
+}

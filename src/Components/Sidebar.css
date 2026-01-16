@@ -1,0 +1,92 @@
+
+
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background: #214d38;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.logo-icon {
+    font-size: 24px;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Menu */
+.menu,
+.integrations {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: #dfeee6;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.25s ease;
+}
+
+/* Hover & Active */
+.menu-item:hover {
+    background: #2f6b4f;
+    color: #ffffff;
+}
+
+.menu-item.active {
+    background: #3cb371;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Section Title */
+.section-title {
+    margin: 30px 0 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #b6d3c3;
+}
+
+/* Profile */
+.profile {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.profile-info .name {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.profile-info .email {
+    font-size: 12px;
+    color: #b6d3c3;
+}

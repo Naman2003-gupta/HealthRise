@@ -1,0 +1,56 @@
+.welcome-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 24px;
+}
+
+/* Left */
+.welcome-text h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 6px;
+}
+
+.welcome-text p {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* Right */
+.welcome-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.new-activity-btn {
+    background: #f97316;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.new-activity-btn:hover {
+    background: #ea580c;
+}
+
+.date-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: #f9fafb;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #374151;
+    border: 1px solid #e5e7eb;
+}
