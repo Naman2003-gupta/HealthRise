@@ -6,30 +6,35 @@
     font-family: "Inter", sans-serif;
 }
 
-/* MAIN DASHBOARD LAYOUT */
+/* DASHBOARD LAYOUT */
 .dashboard {
     display: flex;
-    height: 100vh;
-    background-color: #f5f7fb;
+    min-height: 100vh;
+    background: #f5f7fb;
 }
 
 /* MAIN CONTENT */
 .main {
     margin-left: 250px;
-    /* sidebar width */
-    padding: 140px 24px 24px;
-    /* 🔥 pushes content below topbar */
+    padding-top: 96px;
+    padding-left: 22px;
+    padding-right: 22px;
+    transition: margin-left 0.3s ease;
     min-height: 100vh;
     background: #f5f7fb;
 }
 
+/* WHEN SIDEBAR COLLAPSED */
+.main.collapsed {
+    margin-left: 80px;
+}
 
 /* GRID STRUCTURE */
 .main2 {
     display: grid;
     grid-template-columns: 2.5fr 1fr;
     gap: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .main3 {
@@ -39,7 +44,7 @@
     margin: 16px 0;
 }
 
-/* CARDS (COMMON STYLE) */
+/* COMMON CARD */
 .card {
     background: #ffffff;
     border-radius: 14px;

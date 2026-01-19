@@ -1,8 +1,8 @@
 /* Wrapper keeps spacing from edges */
 .topbar-wrapper {
     position: fixed;
-    top: 16px;
-    left: 260px;
+    top: 10px;
+    left: 272px;
     /* sidebar width */
     right: 24px;
     z-index: 1000;

@@ -1,12 +1,14 @@
 import "./Sidebar.css";
-
+import ConsultDoctor from "./ConsultDoctor";
 const Sidebar = ({ activePage, setActivePage }) => {
   return (
     <aside className="sidebar">
       {/* Logo */}
       <div className="logo">
+        
         <span className="logo-icon">💊</span>
         <span className="logo-text">HealthRise</span>
+        
       </div>
 
       {/* Main Menu */}
@@ -19,36 +21,36 @@ const Sidebar = ({ activePage, setActivePage }) => {
         </button>
 
         <button
-          className={`menu-item ${activePage === "doctor" ? "active" : ""}`}
-          onClick={() => setActivePage("doctor")}
+          className={`menu-item ${activePage === "ConsultDoctor" ? "active" : ""}`}
+          onClick={() => setActivePage("ConsultDoctor")}
         >
           Consult a Doctor
         </button>
 
         <button
-          className={`menu-item ${activePage === "appointments" ? "active" : ""}`}
-          onClick={() => setActivePage("appointments")}
+          className={`menu-item ${activePage === "Appointments" ? "active" : ""}`}
+          onClick={() => setActivePage("Appointments")}
         >
           Appointments
         </button>
 
         <button
-          className={`menu-item ${activePage === "history" ? "active" : ""}`}
-          onClick={() => setActivePage("history")}
+          className={`menu-item ${activePage === "MedicalHistory" ? "active" : ""}`}
+          onClick={() => setActivePage("MedicalHistory")}
         >
           Medical History
         </button>
 
         <button
-          className={`menu-item ${activePage === "hospitals" ? "active" : ""}`}
-          onClick={() => setActivePage("hospitals")}
+          className={`menu-item ${activePage === "MyHospitals" ? "active" : ""}`}
+          onClick={() => setActivePage("MyHospitals")}
         >
           My Hospitals
         </button>
 
         <button
-          className={`menu-item ${activePage === "analytics" ? "active" : ""}`}
-          onClick={() => setActivePage("analytics")}
+          className={`menu-item ${activePage === "Analytics" ? "active" : ""}`}
+          onClick={() => setActivePage("Analytics")}
         >
           Analytics
         </button>

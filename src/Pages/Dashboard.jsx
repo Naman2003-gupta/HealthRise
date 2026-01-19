@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../App.css";
-
 import Sidebar from "../Components/Sidebar.jsx";
 import Topbar from "../Components/Topbar.jsx";
 import Welcome from "../Components/Welcome.jsx";
@@ -13,17 +12,27 @@ import Calendar from "../Components/Calender.jsx";
 import ActivityGrowth from "../Components/ActivityGrowth.jsx";
 import RecentConsultation from "../Components/RecentConsultations.jsx";
 import QuickActions from "../Components/QuickActions.jsx";
-
+import ConsultDoctor from "../Components/ConsultDoctor.jsx";
+import Appointments from "../Components/Appointments.jsx";
+import MedicalHistory from "../Components/MedicalHistory.jsx";
+import MyHospitals from "../Components/MyHospitals.jsx";
+import Analytics from "../Components/Analytics.jsx";
 function Dashboard() {
   const [activePage, setActivePage] = useState("dashboard");
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   return (
     <div className="dashboard">
-      <Sidebar activePage={activePage} setActivePage={setActivePage} />
+      <Sidebar
+        activePage={activePage}
+        setActivePage={setActivePage}
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+      />
 
-      <main className="main">
-        <Topbar />  
-        {/* DASHBOARD */}
+      <main className={`main ${sidebarOpen ? "" : "collapsed"}`}>
+        <Topbar />
+
         {activePage === "dashboard" && (
           <>
             <Welcome />
@@ -47,10 +56,11 @@ function Dashboard() {
           </>
         )}
 
-        {/* OTHER PAGES */}
-        {activePage === "appointments" && <Upcoming />}
-        {activePage === "history" && <RecentConsultation />}
-        {activePage === "analytics" && <ActivityGrowth />}
+        {activePage === "ConsultDoctor" && <ConsultDoctor />}
+        {activePage === "Appointments" && <Appointments />}
+        {activePage === "MedicalHistory" && <MedicalHistory />}
+        {activePage === "MyHospitals" && <MyHospitals />}
+        {activePage === "Analytics" && <Analytics />}
       </main>
     </div>
   );
