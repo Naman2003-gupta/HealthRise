@@ -1,35 +1,48 @@
+/* RESET */
 * {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
 }
 
-/* ===== Dashboard Layout ===== */
+/* MAIN DASHBOARD LAYOUT */
 .dashboard {
     display: flex;
-    min-height: 100vh;
-    width: 100%;
-    background: #f5f7f6;
+    height: 100vh;
+    background-color: #f5f7fb;
 }
 
-/* ===== Main Content Area ===== */
+/* MAIN CONTENT */
 .main {
-    flex: 1;
-    padding: 24px;
-    overflow-y: auto;
-    background: #f5f7f6;
+    margin-left: 250px;
+    /* sidebar width */
+    padding: 140px 24px 24px;
+    /* 🔥 pushes content below topbar */
+    min-height: 100vh;
+    background: #f5f7fb;
 }
 
-/* Optional smooth scrollbar */
-.main::-webkit-scrollbar {
-    width: 6px;
+
+/* GRID STRUCTURE */
+.main2 {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
 }
 
-.main::-webkit-scrollbar-thumb {
-    background-color: #cbd5cf;
-    border-radius: 8px;
+.main3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 16px 0;
 }
 
-.main2{
-    display: flex;
-    flex-direction: row;
-    gap:10px
+/* CARDS (COMMON STYLE) */
+.card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
 }

@@ -1,0 +1,88 @@
+.cholesterol-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 24px;
+    width: 220px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+/* Header */
+.cholesterol-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cholesterol-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #fef3c7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.cholesterol-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Value */
+.cholesterol-value {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.value-box {
+    background: #f5f6f8;
+    padding: 16px 22px;
+    border-radius: 14px;
+}
+
+.value-main {
+    font-size: 46px;
+    font-weight: 700;
+}
+
+.value-unit {
+    font-size: 15px;
+    color: #6b7280;
+}
+
+/* Actions */
+.cholesterol-actions {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cholesterol-status {
+    background: #fef3c7;
+    color: #d97706;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.edit-btn {
+    background: #f3f4f6;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Graph */
+.cholesterol-graph {
+    margin-top: 18px;
+    width: 100%;
+    height: 70px;
+}

@@ -1,11 +1,24 @@
-.topbar {
-    height: 64px;
-    padding: 0 24px;
+/* Wrapper keeps spacing from edges */
+.topbar-wrapper {
+    position: fixed;
+    top: 16px;
+    left: 260px;
+    /* sidebar width */
+    right: 24px;
+    z-index: 1000;
+}
+
+/* Actual topbar card */
+.topbar-card {
     background: #ffffff;
+    border-radius: 14px;
+    padding: 12px 16px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #e5e7eb;
+
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.06);
 }
 
 /* Search */
@@ -13,14 +26,12 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    background: #f5f7fa;
-    padding: 10px 14px;
-    border-radius: 10px;
-    width: 320px;
-}
 
-.search-icon {
-    color: #6b7280;
+    background: #f3f4f6;
+    padding: 10px 14px;
+    border-radius: 12px;
+
+    width: 360px;
 }
 
 .search-input {
@@ -28,38 +39,66 @@
     outline: none;
     background: transparent;
     font-size: 14px;
-    color: #111827;
+    width: 100%;
 }
 
-/* Right actions */
-.topbar-actions {
+/* Right section */
+.topbar-right {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 14px;
 }
 
+/* Icons */
 .icon-btn {
     position: relative;
     background: none;
     border: none;
     cursor: pointer;
-    color: #374151;
 }
 
 .notification-dot {
     position: absolute;
-    top: 4px;
-    right: 4px;
+    top: 2px;
+    right: 2px;
     width: 8px;
     height: 8px;
     background: #ef4444;
     border-radius: 50%;
 }
 
+/* Avatar */
 .avatar {
     width: 36px;
     height: 36px;
     border-radius: 50%;
     object-fit: cover;
     cursor: pointer;
+}
+
+/* Add button */
+.add-btn {
+    background: #ff7a2f;
+    color: #ffffff;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Date pill */
+.date-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    padding: 10px 14px;
+    border-radius: 10px;
+
+    font-size: 13px;
+    color: #374151;
 }

@@ -1,0 +1,77 @@
+.quick-card {
+    margin-top: 16px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 20px;
+}
+
+/* Title */
+.quick-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+/* List */
+.quick-list {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Item */
+.quick-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-top: 1px solid #f1f5f9;
+    cursor: pointer;
+}
+
+.quick-item:first-child {
+    border-top: none;
+}
+
+/* Left */
+.quick-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Icon */
+.quick-icon {
+    width: 40px;
+    height: 40px;
+    background: #f1f5f9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+/* Text */
+.quick-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.quick-main {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.quick-sub {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+/* Arrow */
+.quick-arrow {
+    font-size: 20px;
+    color: #9ca3af;
+}

@@ -1,6 +1,6 @@
 import "./Sidebar.css";
 
-const Sidebar = () => {
+const Sidebar = ({ activePage, setActivePage }) => {
   return (
     <aside className="sidebar">
       {/* Logo */}
@@ -11,35 +11,54 @@ const Sidebar = () => {
 
       {/* Main Menu */}
       <nav className="menu">
-        <a href="#" className="menu-item active">
+        <button
+          className={`menu-item ${activePage === "dashboard" ? "active" : ""}`}
+          onClick={() => setActivePage("dashboard")}
+        >
           Dashboard
-        </a>
-        <a href="#" className="menu-item">
+        </button>
+
+        <button
+          className={`menu-item ${activePage === "doctor" ? "active" : ""}`}
+          onClick={() => setActivePage("doctor")}
+        >
           Consult a Doctor
-        </a>
-        <a href="#" className="menu-item">
+        </button>
+
+        <button
+          className={`menu-item ${activePage === "appointments" ? "active" : ""}`}
+          onClick={() => setActivePage("appointments")}
+        >
           Appointments
-        </a>
-        <a href="#" className="menu-item">
+        </button>
+
+        <button
+          className={`menu-item ${activePage === "history" ? "active" : ""}`}
+          onClick={() => setActivePage("history")}
+        >
           Medical History
-        </a>
-        <a href="#" className="menu-item">
+        </button>
+
+        <button
+          className={`menu-item ${activePage === "hospitals" ? "active" : ""}`}
+          onClick={() => setActivePage("hospitals")}
+        >
           My Hospitals
-        </a>
-        <a href="#" className="menu-item">
+        </button>
+
+        <button
+          className={`menu-item ${activePage === "analytics" ? "active" : ""}`}
+          onClick={() => setActivePage("analytics")}
+        >
           Analytics
-        </a>
+        </button>
       </nav>
 
       {/* Integrations */}
       <div className="integrations">
         <p className="section-title">Integrations</p>
-        <a href="#" className="menu-item">
-          Google Drive
-        </a>
-        <a href="#" className="menu-item">
-          Paypal
-        </a>
+        <button className="menu-item">Google Drive</button>
+        <button className="menu-item">Paypal</button>
       </div>
 
       {/* Profile */}

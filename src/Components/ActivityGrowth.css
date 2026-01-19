@@ -1,0 +1,81 @@
+.activity-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Header */
+.activity-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.legend {
+    display: flex;
+    gap: 16px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.orange {
+    background: #f97316;
+}
+
+.blue {
+    background: #2563eb;
+}
+
+.date-box {
+    text-align: right;
+}
+
+.edit-btn {
+    margin-top: 6px;
+    background: #f3f4f6;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* CHART */
+.chart-container {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 220px;
+    font-size: 13px;
+    color: #000000;
+}
+
+.chart-svg {
+    width: 80%;
+    height: 220px;
+}
+
+/* X Axis */
+.x-axis {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 42px;
+    margin-top: 6px;
+    font-size: 13px;
+    color: #000000;
+}

@@ -1,9 +1,9 @@
 import React from 'react'
-import Dashbord from './Pages/Dashbord.jsx'
+import Dashboard from './Pages/Dashboard.jsx'
 function App() {
   return (
     <div>
-      <Dashbord />
+      <Dashboard />
     </div>
   )
 }
