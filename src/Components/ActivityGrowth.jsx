@@ -2,7 +2,6 @@ import React from "react";
 import "./ActivityGrowth.css";
 
 const ActivityGrowth = () => {
-  // backend-ready data
   const weightData = [25, 30, 28, 35, 32, 40, 10, 85];
   const bmiData = [28, 35, 30, 20, 45, 38, 22, 90];
 
@@ -10,8 +9,9 @@ const ActivityGrowth = () => {
     <div className="activity-card">
       {/* Header */}
       <div className="activity-header">
-        <div>
+        <div className="header-left">
           <h3>Activity Growth</h3>
+
           <div className="legend">
             <span>
               <span className="dot orange" /> My Weight
@@ -23,14 +23,13 @@ const ActivityGrowth = () => {
         </div>
 
         <div className="date-box">
-          <span>📅 October 28th, 2023</span>
+          <span className="date">📅 October 28th, 2023</span>
           <button className="edit-btn">Edit ✎</button>
         </div>
       </div>
 
-      {/* GRAPH */}
+      {/* Chart */}
       <div className="chart-container">
-        {/* Y AXIS */}
         <div className="y-axis">
           <span>100</span>
           <span>80</span>
@@ -40,9 +39,7 @@ const ActivityGrowth = () => {
           <span>0</span>
         </div>
 
-        {/* SVG */}
         <svg viewBox="0 0 600 220" className="chart-svg">
-          {/* Grid lines */}
           {[0, 44, 88, 132, 176].map((y, i) => (
             <line
               key={i}
@@ -55,7 +52,6 @@ const ActivityGrowth = () => {
             />
           ))}
 
-          {/* Weight line */}
           <polyline
             fill="none"
             stroke="#f97316"
@@ -65,7 +61,6 @@ const ActivityGrowth = () => {
               .join(" ")}
           />
 
-          {/* BMI line */}
           <polyline
             fill="none"
             stroke="#2563eb"
@@ -75,7 +70,7 @@ const ActivityGrowth = () => {
         </svg>
       </div>
 
-      {/* X AXIS */}
+      {/* X Axis */}
       <div className="x-axis">
         <span>12/10</span>
         <span>13/10</span>

@@ -78,6 +78,12 @@
     padding: 6px 16px;
     border-radius: 10px;
     cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.edit-btn:hover {
+    background: #e5e7eb;
 }
 
 /* Graph */
@@ -85,4 +91,196 @@
     margin-top: 18px;
     width: 100%;
     height: 70px;
+}
+
+/* ============================ */
+/* 📱 RESPONSIVE BREAKPOINTS ONLY */
+/* ============================ */
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+    .pressure-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .pressure-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .pressure-title {
+        font-size: 15px;
+    }
+
+    .value-box {
+        padding: 14px 20px;
+    }
+
+    .value-main {
+        font-size: 42px;
+    }
+
+    .value-unit {
+        font-size: 14px;
+    }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+    .pressure-card {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .pressure-header {
+        gap: 10px;
+    }
+
+    .pressure-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+        border-radius: 10px;
+    }
+
+    .pressure-title {
+        font-size: 14px;
+    }
+
+    .pressure-value {
+        margin-top: 16px;
+        gap: 12px;
+    }
+
+    .value-box {
+        padding: 12px 18px;
+        border-radius: 12px;
+    }
+
+    .value-main {
+        font-size: 38px;
+    }
+
+    .value-unit {
+        font-size: 13px;
+    }
+
+    .pressure-actions {
+        margin-top: 12px;
+    }
+
+    .pressure-status,
+    .edit-btn {
+        padding: 5px 14px;
+        font-size: 12px;
+    }
+
+    .pressure-graph {
+        margin-top: 16px;
+        height: 65px;
+    }
+}
+
+/* Small Mobile (≤480px) */
+@media (max-width: 480px) {
+    .pressure-card {
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    .pressure-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+
+    .pressure-title {
+        font-size: 13px;
+    }
+
+    .pressure-value {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-top: 14px;
+    }
+
+    .value-box {
+        padding: 10px 16px;
+        width: 100%;
+        justify-content: flex-start;
+        border-radius: 10px;
+    }
+
+    .value-main {
+        font-size: 34px;
+    }
+
+    .value-unit {
+        font-size: 12px;
+    }
+
+    .pressure-actions {
+        margin-top: 14px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .pressure-status {
+        padding: 4px 12px;
+        font-size: 11px;
+        border-radius: 16px;
+    }
+
+    .edit-btn {
+        width: 100%;
+        padding: 6px 12px;
+        font-size: 11px;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .pressure-graph {
+        margin-top: 14px;
+        height: 55px;
+    }
+}
+
+/* Very Small Mobile (≤375px) */
+@media (max-width: 375px) {
+    .pressure-card {
+        padding: 14px;
+        border-radius: 12px;
+    }
+
+    .pressure-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    .pressure-title {
+        font-size: 12px;
+    }
+
+    .value-box {
+        padding: 8px 12px;
+    }
+
+    .value-main {
+        font-size: 30px;
+    }
+
+    .value-unit {
+        font-size: 11px;
+    }
+
+    .pressure-graph {
+        height: 45px;
+    }
 }

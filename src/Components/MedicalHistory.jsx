@@ -39,8 +39,8 @@ const MedicalHistory = () => {
       <div className="history-list">
         {historyData.map((item, index) => (
           <div className="history-card" key={index}>
-            <div>
-              <h3>{item.doctor}</h3>
+            <div className="history-info">
+              <h3 className="doctor-name">{item.doctor}</h3>
               <p className="specialization">{item.specialization}</p>
               <p className="hospital">{item.hospital}</p>
             </div>

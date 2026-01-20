@@ -39,14 +39,14 @@ const MyHospitals = () => {
         {hospitals.map((hospital, index) => (
           <div className="hospital-card" key={index}>
             <div className="hospital-left">
-              <h3>{hospital.name}</h3>
+              <h3 className="hospital-name">{hospital.name}</h3>
               <p className="location">{hospital.location}</p>
               <span className="department">{hospital.department}</span>
             </div>
 
             <div className="hospital-right">
               <div className="meta">
-                <p>
+                <p className="doctors-count">
                   <strong>{hospital.doctors}</strong> Doctors
                 </p>
                 <span
@@ -59,8 +59,8 @@ const MyHospitals = () => {
               </div>
 
               <div className="actions">
-                <button className="secondary">View</button>
-                <button className="primary">Manage</button>
+                <button className="btn-secondary">View</button>
+                <button className="btn-primary">Manage</button>
               </div>
             </div>
           </div>

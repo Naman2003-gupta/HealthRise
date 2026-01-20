@@ -1,11 +1,20 @@
+/* Container for centering */
+.calendar-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .calendar-card {
     margin-top: 16px;
     background: #ffffff;
     border-radius: 20px;
     padding: 20px;
     width: 414px;
+    max-width: 100%;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     font-family: "Segoe UI", sans-serif;
+    box-sizing: border-box;
 }
 
 /* Header */
@@ -19,11 +28,13 @@
 .calendar-header h3 {
     font-size: 18px;
     margin: 0;
+    color: #111827;
 }
 
 .arrow {
     font-size: 18px;
     cursor: pointer;
+    color: #6b7280;
 }
 
 /* Month */
@@ -34,10 +45,16 @@
     margin-bottom: 12px;
 }
 
+.calendar-month span {
+    font-weight: 600;
+    color: #111827;
+}
+
 .month-nav span {
     margin-left: 12px;
     cursor: pointer;
     font-size: 18px;
+    color: #6b7280;
 }
 
 /* Days */
@@ -48,21 +65,37 @@
     color: #6b7280;
     text-align: center;
     margin-bottom: 10px;
+    gap: 4px;
+}
+
+.calendar-days span {
+    padding: 4px;
+    font-weight: 500;
 }
 
 /* Dates */
 .calendar-dates {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
+    gap: 8px;
     text-align: center;
     margin-bottom: 20px;
 }
 
 .calendar-dates span {
-    padding: 8px;
+    padding: 8px 0;
     border-radius: 50%;
     cursor: pointer;
+    font-size: 14px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.calendar-dates span:hover:not(.disabled) {
+    background: #f3f4f6;
 }
 
 .disabled {
@@ -72,6 +105,7 @@
 .active {
     border: 2px solid #f97316;
     color: #f97316;
+    font-weight: 600;
 }
 
 .dot {
@@ -85,7 +119,7 @@
     background: #f97316;
     border-radius: 50%;
     position: absolute;
-    bottom: 2px;
+    bottom: 4px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -94,13 +128,21 @@
 .upcoming-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 10px;
+}
+
+.upcoming-header h4 {
+    font-size: 16px;
+    margin: 0;
+    color: #111827;
 }
 
 .view-all {
     color: #f97316;
     font-size: 14px;
     cursor: pointer;
+    font-weight: 500;
 }
 
 .upcoming-list {
@@ -112,29 +154,221 @@
 .upcoming-item {
     background: #ecfdf5;
     border-radius: 12px;
-    padding: 10px;
+    padding: 12px;
     display: flex;
     gap: 12px;
-    align-items: center;
+    align-items: flex-start;
+    transition: transform 0.2s ease;
+}
+
+.upcoming-item:hover {
+    transform: translateY(-2px);
 }
 
 .avatar {
     width: 40px;
     height: 40px;
+    min-width: 40px;
     border-radius: 50%;
     background: #d1fae5;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 18px;
+}
+
+.upcoming-details {
+    flex: 1;
 }
 
 .title {
     font-weight: 600;
-    margin: 0;
+    margin: 0 0 4px 0;
+    color: #111827;
+    font-size: 14px;
 }
 
 .time {
     font-size: 13px;
     color: #6b7280;
     margin: 0;
+    line-height: 1.4;
+}
+
+/* ============================ */
+/* 📱 MOBILE RESPONSIVE STYLES */
+/* ============================ */
+
+@media (max-width: 768px) {
+    .calendar-container {
+        justify-content: center;
+        padding: 0 8px;
+    }
+
+    .calendar-card {
+        width: 100%;
+        max-width: 400px;
+        margin: 16px auto;
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .calendar-header h3 {
+        font-size: 17px;
+    }
+
+    .calendar-month {
+        margin-bottom: 10px;
+    }
+
+    .calendar-month span {
+        font-size: 15px;
+    }
+
+    .calendar-days {
+        font-size: 11px;
+        gap: 2px;
+    }
+
+    .calendar-dates {
+        gap: 6px;
+        margin-bottom: 16px;
+    }
+
+    .calendar-dates span {
+        padding: 6px 0;
+        height: 32px;
+        font-size: 13px;
+    }
+
+    .upcoming-header h4 {
+        font-size: 15px;
+    }
+
+    .upcoming-item {
+        padding: 10px;
+    }
+
+    .avatar {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        font-size: 16px;
+    }
+
+    .title {
+        font-size: 13px;
+    }
+
+    .time {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .calendar-card {
+        padding: 14px;
+        margin-right: 20px;
+        border-radius: 14px;
+        max-width: 100%;
+    }
+
+    .calendar-header h3 {
+        font-size: 16px;
+    }
+
+    .calendar-month span {
+        font-size: 14px;
+    }
+
+    .calendar-days {
+        font-size: 10px;
+    }
+
+    .calendar-dates {
+        gap: 4px;
+    }
+
+    .calendar-dates span {
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .upcoming-header h4 {
+        font-size: 14px;
+    }
+
+    .view-all {
+        font-size: 13px;
+    }
+
+    .upcoming-item {
+        padding: 8px 10px;
+        gap: 10px;
+    }
+
+    .avatar {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+    }
+
+    .title {
+        font-size: 12px;
+    }
+
+    .time {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 375px) {
+    .calendar-card {
+        padding: 12px;
+    }
+
+    .calendar-days span {
+        padding: 2px;
+    }
+
+    .calendar-dates {
+        gap: 3px;
+    }
+
+    .calendar-dates span {
+        height: 28px;
+        padding: 4px 0;
+    }
+
+    .dot::after {
+        width: 4px;
+        height: 4px;
+        bottom: 2px;
+    }
+}
+
+/* For very small screens, ensure everything fits */
+@media (max-width: 320px) {
+    .calendar-card {
+        padding: 10px;
+        border-radius: 12px;
+    }
+
+    .calendar-dates span {
+        height: 26px;
+        font-size: 11px;
+    }
+
+    .upcoming-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .avatar {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        font-size: 14px;
+    }
 }

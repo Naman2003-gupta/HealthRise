@@ -1,52 +1,78 @@
 import React, { useState } from "react";
 import "../App.css";
-import Sidebar from "../Components/Sidebar.jsx";
-import Topbar from "../Components/Topbar.jsx";
-import Welcome from "../Components/Welcome.jsx";
-import Upcoming from "../Components/Upcoming.jsx";
-import Tracker from "../Components/Tracker.jsx";
-import BloodGulucose from "../Components/BloodGulucose.jsx";
-import BloodPressure from "../Components/BloodPressure.jsx";
-import Cholesterol from "../Components/Cholesterol.jsx";
-import Calendar from "../Components/Calender.jsx";
-import ActivityGrowth from "../Components/ActivityGrowth.jsx";
-import RecentConsultation from "../Components/RecentConsultations.jsx";
-import QuickActions from "../Components/QuickActions.jsx";
-import ConsultDoctor from "../Components/ConsultDoctor.jsx";
-import Appointments from "../Components/Appointments.jsx";
-import MedicalHistory from "../Components/MedicalHistory.jsx";
-import MyHospitals from "../Components/MyHospitals.jsx";
-import Analytics from "../Components/Analytics.jsx";
-function Dashboard() {
+import Sidebar from "../Components/Sidebar";
+import Topbar from "../Components/Topbar";
+
+import Welcome from "../Components/Welcome";
+import Upcoming from "../Components/Upcoming";
+import Tracker from "../Components/Tracker";
+import BloodGulucose from "../Components/BloodGulucose";
+import BloodPressure from "../Components/BloodPressure";
+import Cholesterol from "../Components/Cholesterol";
+import Calendar from "../Components/Calender";
+import ActivityGrowth from "../Components/ActivityGrowth";
+import RecentConsultation from "../Components/RecentConsultations";
+import QuickActions from "../Components/QuickActions";
+import ConsultDoctor from "../Components/ConsultDoctor";
+import Appointments from "../Components/Appointments";
+import MedicalHistory from "../Components/MedicalHistory";
+import MyHospitals from "../Components/MyHospitals";
+import Analytics from "../Components/Analytics";
+
+const Dashboard = () => {
   const [activePage, setActivePage] = useState("dashboard");
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+
+  // Desktop collapse
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  // Mobile open
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="dashboard">
+    <div className={`dashboard ${sidebarCollapsed ? "sidebar-collapsed" : ""}`}>
       <Sidebar
         activePage={activePage}
         setActivePage={setActivePage}
+        sidebarCollapsed={sidebarCollapsed}
+        setSidebarCollapsed={setSidebarCollapsed}
         sidebarOpen={sidebarOpen}
         setSidebarOpen={setSidebarOpen}
       />
 
-      <main className={`main ${sidebarOpen ? "" : "collapsed"}`}>
-        <Topbar />
+      {sidebarOpen && window.innerWidth <= 1024 && (
+        <div
+          className="sidebar-overlay"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+
+      <main
+        className={`main ${sidebarOpen && window.innerWidth <= 1024 ? "blur" : ""}`}
+      >
+        <Topbar
+          sidebarOpen={sidebarOpen}
+          setSidebarOpen={setSidebarOpen}
+          sidebarCollapsed={sidebarCollapsed}
+          setSidebarCollapsed={setSidebarCollapsed}
+        />
 
         {activePage === "dashboard" && (
           <>
             <Welcome />
+
             <div className="main2">
               <div>
                 <Upcoming />
+
                 <div className="main3">
                   <BloodGulucose />
                   <BloodPressure />
                   <Cholesterol />
                 </div>
+
                 <ActivityGrowth />
                 <RecentConsultation />
               </div>
+
               <div>
                 <Tracker />
                 <Calendar />
@@ -64,6 +90,6 @@ function Dashboard() {
       </main>
     </div>
   );
-}
+};
 
 export default Dashboard;

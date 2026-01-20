@@ -75,3 +75,11 @@
     font-size: 20px;
     color: #9ca3af;
 }
+
+@media (max-width: 480px) {
+    .quick-card {
+        padding: 14px;
+        margin-right: 20px;
+        border-radius: 14px;
+        max-width: 100%;
+    }}

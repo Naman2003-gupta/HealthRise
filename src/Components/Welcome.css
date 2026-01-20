@@ -1,16 +1,27 @@
 .welcome-card {
     background: #ffffff;
-    border-radius: 14px;
-    padding: 20px 24px;
+    border-radius: 18px;
+    padding: 22px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border: 1px solid #e5e7eb;
     margin-bottom: 24px;
     margin-top: 0px;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Left */
+.welcome-text {
+    flex: 1;
+    min-width: 300px;
+}
+
 .welcome-text h2 {
     font-size: 20px;
     font-weight: 600;
@@ -21,23 +32,30 @@
 .welcome-text p {
     font-size: 14px;
     color: #6b7280;
+    line-height: 1.5;
 }
 
 /* Right */
 .welcome-actions {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
+    flex-wrap: wrap;
 }
 
 .new-activity-btn {
     background: #f97316;
     color: #fff;
     border: none;
-    padding: 10px 16px;
-    border-radius: 10px;
+    padding: 10px 20px;
+    border-radius: 24px;
     font-size: 14px;
     cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+    font-weight: 500;
+    min-width: 120px;
+    flex: 1;
 }
 
 .new-activity-btn:hover {
@@ -47,11 +65,193 @@
 .date-box {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 14px;
+    gap: 10px;
+    padding: 10px 16px;
     background: #f9fafb;
-    border-radius: 10px;
+    border-radius: 14px;
     font-size: 14px;
     color: #374151;
     border: 1px solid #e5e7eb;
+    min-width: 200px;
+    flex: 1;
+}
+
+.date-icon-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.date-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.date-label {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 2px;
+}
+
+.date-value {
+    font-size: 14px;
+    font-weight: 500;
+    color: #111827;
+}
+
+/* ============================ */
+/* 📱 RESPONSIVE BREAKPOINTS - SYNCED WITH UPCOMING */
+/* ============================ */
+
+/* Tablet & Mobile (≤1024px) */
+@media (max-width: 1024px) {
+    .welcome-card {
+        padding: 18px;
+        border-radius: 16px;
+        gap: 16px;
+    }
+
+    .welcome-text {
+        min-width: 240px;
+    }
+
+    .date-box {
+        min-width: 180px;
+        padding: 10px 14px;
+    }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+    .welcome-card {
+        padding: 16px;
+        border-radius: 14px;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .welcome-text {
+        width: 100%;
+        min-width: auto;
+        margin-bottom: 12px;
+    }
+
+    .welcome-text h2 {
+        font-size: 18px;
+    }
+
+    .welcome-text p {
+        font-size: 13px;
+    }
+
+    .welcome-actions {
+        width: 100%;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .new-activity-btn {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 12px;
+        text-align: center;
+    }
+
+    .date-box {
+        width: 100%;
+        min-width: auto;
+        padding: 12px;
+        justify-content: flex-start;
+    }
+}
+
+/* Small Mobile (≤480px) */
+@media (max-width: 480px) {
+    .welcome-card {
+        padding: 14px;
+        border-radius: 12px;
+        margin-bottom: 16px;
+    }
+
+    .welcome-text h2 {
+        font-size: 17px;
+    }
+
+    .welcome-text p {
+        font-size: 13px;
+    }
+
+    .new-activity-btn {
+        padding: 10px 14px;
+        font-size: 13px;
+        border-radius: 10px;
+    }
+
+    .date-box {
+        padding: 10px 12px;
+        border-radius: 10px;
+    }
+
+    .date-value {
+        font-size: 13px;
+    }
+}
+
+/* Very Small Mobile (≤375px) */
+@media (max-width: 375px) {
+    .welcome-card {
+        padding: 12px;
+    }
+
+    .welcome-text h2 {
+        font-size: 16px;
+    }
+
+    .date-box {
+        padding: 8px 10px;
+    }
+
+    .date-value {
+        font-size: 12px;
+    }
+}
+
+/* Extra Small Mobile (≤320px) */
+@media (max-width: 320px) {
+    .welcome-card {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .welcome-text h2 {
+        font-size: 15px;
+        margin-bottom: 4px;
+    }
+
+    .welcome-text p {
+        font-size: 12px;
+    }
+
+    .new-activity-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .date-box {
+        padding: 8px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .date-content {
+        flex-direction: row;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .date-label {
+        margin-bottom: 0;
+    }
 }

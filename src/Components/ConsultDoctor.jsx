@@ -1,4 +1,3 @@
-// src/Components/ConsultDoctor.jsx
 import React from "react";
 import "./ConsultDoctor.css";
 
@@ -40,21 +39,23 @@ const ConsultDoctor = () => {
         {doctors.map((doc, index) => (
           <div className="doctor-card" key={index}>
             <div className="doctor-top">
-              <img src={doc.img} alt={doc.name} />
-              <div>
-                <h3>{doc.name}</h3>
-                <span>{doc.specialization}</span>
+              <img src={doc.img} alt={doc.name} className="doctor-img" />
+              <div className="doctor-info">
+                <h3 className="doctor-name">{doc.name}</h3>
+                <span className="doctor-specialization">
+                  {doc.specialization}
+                </span>
               </div>
             </div>
 
             <div className="doctor-details">
-              <p>{doc.hospital}</p>
-              <p className="time">{doc.time}</p>
+              <p className="doctor-hospital">{doc.hospital}</p>
+              <p className="doctor-time">{doc.time}</p>
             </div>
 
             <div className="doctor-actions">
-              <button className="secondary">Reschedule</button>
-              <button className="primary">Book Appointment</button>
+              <button className="btn-secondary">Reschedule</button>
+              <button className="btn-primary">Book Appointment</button>
             </div>
           </div>
         ))}

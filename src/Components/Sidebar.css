@@ -10,16 +10,16 @@
     display: flex;
     flex-direction: column;
     padding: 20px 14px;
-    transition: width 0.3s ease;
+    transition: width 0.3s ease, transform 0.3s ease;
     z-index: 100;
 }
 
-/* COLLAPSED SIDEBAR */
+/* COLLAPSED */
 .sidebar.collapsed {
     width: 80px;
 }
 
-/* LOGO / TOGGLE */
+/* LOGO */
 .logo {
     display: flex;
     align-items: center;
@@ -46,6 +46,7 @@
 
 /* MENU ITEM */
 .menu-item {
+    position: relative;
     background: transparent;
     border: none;
     color: #ffffff;
@@ -58,17 +59,22 @@
     align-items: center;
     gap: 12px;
     transition: background 0.2s ease;
+    overflow: visible;
 }
 
-/* HOVER */
 .menu-item:hover {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 /* ACTIVE */
 .menu-item.active {
     background: #000000;
     color: #ff8a00;
+}
+
+/* ICON */
+.icon {
+    font-size: 18px;
 }
 
 /* INTEGRATIONS */
@@ -105,10 +111,73 @@
     color: #d1d5db;
 }
 
-/* HIDE TEXT WHEN COLLAPSED */
+/* COLLAPSED BEHAVIOR */
 .sidebar.collapsed .logo-text,
-.sidebar.collapsed .menu-item span,
 .sidebar.collapsed .section-title,
 .sidebar.collapsed .profile-info {
     display: none;
+}
+
+.sidebar.collapsed .menu-item {
+    justify-content: center;
+}
+
+/* TOOLTIP LABEL (NO DISAPPEARING HOVER) */
+.sidebar.collapsed .menu-item .label {
+    position: absolute;
+    left: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #000000;
+    color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 200;
+}
+
+.sidebar.collapsed .menu-item:hover .label {
+    opacity: 1;
+    transform: translateY(-50%) translateX(6px);
+}
+
+/* TOOLTIP ARROW */
+.sidebar.collapsed .menu-item .label::before {
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent #000 transparent transparent;
+}
+
+/* MOBILE OVERLAY */
+.sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 99;
+}
+
+/* MOBILE */
+@media (max-width: 1024px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    /* SHOW SIDEBAR WHEN OPEN */
+    .sidebar.mobile-open {
+        transform: translateX(0);
+    }
+
+    /* NO COLLAPSE ON MOBILE */
+    .sidebar.collapsed {
+        width: 250px;
+    }
 }

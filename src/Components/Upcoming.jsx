@@ -12,30 +12,37 @@ const Upcoming = () => {
 
       {/* Appointment Card */}
       <div className="ua-card">
-        
-
+        {/* Top section */}
         <div className="ua-top">
-          {/* Left */}
+          {/* Left - Doctor Info */}
           <div className="ua-doctor">
             <img
               src="https://randomuser.me/api/portraits/women/44.jpg"
               alt="doctor"
+              className="ua-doctor-img"
             />
 
-            <div>
+            <div className="ua-doctor-info">
               <h4>Dr. Alison Ogaga</h4>
               <p>General Practitioner</p>
             </div>
           </div>
 
-          {/* Right */}
+          {/* Right - Appointment Info */}
           <div className="ua-info">
             <div className="ua-info-row">
-              📅 <span>October 28th, 2023</span>⏰{" "}
-              <span>11:30 - 12:00 (30min)</span>
+              <span className="ua-icon">📅</span>
+              <span className="ua-info-text">October 28th, 2023</span>
             </div>
             <div className="ua-info-row">
-              📍 <span>Medicare Hospital, 18 Iwaya Rd, Lagos</span>
+              <span className="ua-icon">⏰</span>
+              <span className="ua-info-text">11:30 - 12:00 (30min)</span>
+            </div>
+            <div className="ua-info-row">
+              <span className="ua-icon">📍</span>
+              <span className="ua-info-text">
+                Medicare Hospital, 18 Iwaya Rd, Lagos
+              </span>
             </div>
           </div>
         </div>

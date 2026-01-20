@@ -1,9 +1,10 @@
 /* PAGE */
 .hospital-page {
     min-height: calc(100vh - 96px);
-    padding: 10px ;
-    padding-left: 120px;
-    width: 1100px;
+    padding: 30px 22px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #f9fafb;
 }
 
 /* HEADER */
@@ -20,6 +21,7 @@
 .page-header p {
     margin-top: 6px;
     color: #6b7280;
+    font-size: 15px;
 }
 
 /* LIST */
@@ -38,18 +40,33 @@
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hospital-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
 }
 
 /* LEFT */
-.hospital-left h3 {
+.hospital-left {
+    flex: 1;
+    min-width: 200px;
+}
+
+.hospital-name {
     margin-bottom: 6px;
     font-size: 16px;
     color: #000000;
+    font-weight: 600;
 }
 
 .location {
     font-size: 13px;
-    color: rgb(176, 176, 176);
+    color: #6b7280;
+    margin: 4px 0;
+    line-height: 1.4;
+    word-break: break-word;
 }
 
 .department {
@@ -59,6 +76,8 @@
     background: #e5e7eb;
     padding: 4px 10px;
     border-radius: 20px;
+    color: #374151;
+    font-weight: 500;
 }
 
 /* RIGHT */
@@ -70,6 +89,17 @@
 
 .meta {
     text-align: right;
+    min-width: 100px;
+}
+
+.doctors-count {
+    font-size: 13px;
+    color: #374151;
+    margin: 0 0 6px 0;
+}
+
+.doctors-count strong {
+    color: #000000;
 }
 
 .status {
@@ -78,6 +108,7 @@
     font-size: 12px;
     padding: 4px 10px;
     border-radius: 20px;
+    font-weight: 600;
 }
 
 .status.active {
@@ -102,14 +133,238 @@
     border: none;
     font-size: 13px;
     cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
 }
 
-button.primary {
+.btn-primary {
     background: #1f4d35;
     color: #ffffff;
 }
 
-button.secondary {
+.btn-primary:hover {
+    background: #153b27;
+}
+
+.btn-secondary {
     background: #e5e7eb;
     color: #111827;
+}
+
+.btn-secondary:hover {
+    background: #d1d5db;
+}
+
+/* ============================ */
+/* 📱 RESPONSIVE BREAKPOINTS */
+/* ============================ */
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+    .hospital-page {
+        padding: 25px 20px;
+    }
+
+    .page-header h1 {
+        font-size: 24px;
+    }
+
+    .page-header p {
+        font-size: 14px;
+    }
+
+    .hospital-card {
+        padding: 18px;
+    }
+
+    .hospital-name {
+        font-size: 15px;
+    }
+
+    .location {
+        font-size: 12px;
+    }
+
+    .department {
+        font-size: 11px;
+        padding: 3px 8px;
+    }
+
+    .hospital-right {
+        gap: 20px;
+    }
+
+    .meta {
+        min-width: 90px;
+    }
+
+    .doctors-count {
+        font-size: 12px;
+    }
+
+    .status {
+        font-size: 11px;
+        padding: 3px 8px;
+    }
+
+    .actions button {
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+    .hospital-page {
+        padding: 20px 16px;
+    }
+
+    .page-header h1 {
+        font-size: 22px;
+    }
+
+    .page-header p {
+        font-size: 13px;
+    }
+
+    .hospital-list {
+        gap: 16px;
+    }
+
+    .hospital-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .hospital-left {
+        width: 100%;
+        min-width: auto;
+        border-bottom: 1px solid #f3f4f6;
+        padding-bottom: 12px;
+    }
+
+    .hospital-right {
+        width: 100%;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .meta {
+        text-align: left;
+        min-width: auto;
+    }
+
+    .actions {
+        gap: 8px;
+    }
+}
+
+/* Small Mobile (≤480px) */
+@media (max-width: 480px) {
+    .hospital-page {
+        padding: 16px 12px;
+    }
+
+    .page-header h1 {
+        font-size: 20px;
+    }
+
+    .page-header p {
+        font-size: 12px;
+    }
+
+    .hospital-list {
+        gap: 14px;
+    }
+
+    .hospital-card {
+        padding: 14px;
+        border-radius: 12px;
+    }
+
+    .hospital-name {
+        font-size: 14px;
+    }
+
+    .location {
+        font-size: 11px;
+    }
+
+    .department {
+        font-size: 10px;
+        padding: 2px 6px;
+    }
+
+    .hospital-right {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .meta {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .doctors-count {
+        margin: 0;
+    }
+
+    .status {
+        margin: 0;
+    }
+
+    .actions {
+        width: 100%;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .actions button {
+        width: 100%;
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+}
+
+/* Very Small Mobile (≤375px) */
+@media (max-width: 375px) {
+    .hospital-page {
+        padding: 14px 10px;
+    }
+
+    .page-header h1 {
+        font-size: 18px;
+    }
+
+    .hospital-card {
+        padding: 12px;
+    }
+
+    .hospital-name {
+        font-size: 13px;
+    }
+
+    .department {
+        font-size: 9px;
+    }
+
+    .doctors-count {
+        font-size: 11px;
+    }
+
+    .status {
+        font-size: 10px;
+        padding: 2px 6px;
+    }
+
+    .actions button {
+        padding: 7px 10px;
+        font-size: 12px;
+    }
 }

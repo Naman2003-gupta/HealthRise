@@ -34,27 +34,50 @@ const Appointments = () => {
       {/* Appointments List */}
       <div className="appointments-list">
         {appointments.map((item, index) => (
-          <div className="appointment-row" key={index}>
-            <div className="doctor-info">
-              <img src={item.img} alt={item.name} />
-              <div>
-                <h3>{item.name}</h3>
-                <span>{item.specialization}</span>
+          <div className="appointment-card" key={index}>
+            <div className="appointment-content">
+              {/* Doctor Info */}
+              <div className="doctor-info">
+                <img src={item.img} alt={item.name} className="doctor-img" />
+                <div className="doctor-details">
+                  <h3 className="doctor-name">{item.name}</h3>
+                  <span className="doctor-specialization">
+                    {item.specialization}
+                  </span>
+                  <span
+                    className={`status-mobile ${item.status.toLowerCase()}`}
+                  >
+                    {item.status}
+                  </span>
+                </div>
               </div>
-            </div>
 
-            <div className="appointment-meta">
-              <p>{item.date}</p>
-              <p>{item.time}</p>
-              <p>{item.hospital}</p>
-            </div>
+              {/* Appointment Details */}
+              <div className="appointment-meta">
+                <div className="meta-item">
+                  <span className="meta-label">Date</span>
+                  <p className="meta-value">{item.date}</p>
+                </div>
+                <div className="meta-item">
+                  <span className="meta-label">Time</span>
+                  <p className="meta-value">{item.time}</p>
+                </div>
+                <div className="meta-item">
+                  <span className="meta-label">Hospital</span>
+                  <p className="meta-value hospital-text">{item.hospital}</p>
+                </div>
+              </div>
 
-            <div className="appointment-actions">
-              <span className={`status ${item.status.toLowerCase()}`}>
-                {item.status}
-              </span>
-              <button className="secondary">Reschedule</button>
-              <button className="primary">Details</button>
+              {/* Actions */}
+              <div className="appointment-actions">
+                <span className={`status-desktop ${item.status.toLowerCase()}`}>
+                  {item.status}
+                </span>
+                <div className="action-buttons">
+                  <button className="btn-secondary">Reschedule</button>
+                  <button className="btn-primary">Details</button>
+                </div>
+              </div>
             </div>
           </div>
         ))}

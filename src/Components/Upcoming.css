@@ -4,6 +4,7 @@
     padding: 22px;
     width: 100%;
     max-width: 720px;
+    margin: 0 auto;
 }
 
 /* Header */
@@ -11,18 +12,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .ua-header h3 {
     font-size: 18px;
     font-weight: 600;
+    color: #111827;
 }
 
 .ua-view {
     font-size: 14px;
     color: #ff7a66;
     cursor: pointer;
+    font-weight: 500;
 }
 
 /* Card */
@@ -32,21 +37,16 @@
     border-radius: 18px;
     padding: 20px;
     color: #fff;
-}
-
-/* Bell */
-.ua-bell {
-    position: absolute;
-    right: 18px;
-    top: 18px;
-    font-size: 22px;
+    overflow: hidden;
 }
 
 /* Top section */
 .ua-top {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 /* Doctor */
@@ -54,22 +54,27 @@
     display: flex;
     gap: 12px;
     align-items: center;
+    flex: 1;
+    min-width: 200px;
 }
 
 .ua-doctor img {
     width: 52px;
     height: 52px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .ua-doctor h4 {
     font-size: 16px;
     font-weight: 600;
+    margin-bottom: 4px;
 }
 
 .ua-doctor p {
     font-size: 14px;
     opacity: 0.9;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 /* Info box */
@@ -78,47 +83,73 @@
     color: #1f4d35;
     padding: 14px 16px;
     border-radius: 14px;
-    width: 360px;
-    font-size: 14px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 100%;
 }
 
 .ua-info-row {
     display: flex;
+    align-items: flex-start;
     gap: 10px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.ua-info-row:last-child {
+    margin-bottom: 0;
+}
+
+.ua-info-row span {
+    font-size: 14px;
+    line-height: 1.4;
+    word-break: break-word;
 }
 
 /* Divider */
 .ua-divider {
     height: 1px;
     background: rgba(255, 255, 255, 0.3);
-    margin: 18px 0;
+    margin: 20px 0;
 }
 
 /* Actions */
 .ua-actions {
     display: flex;
     gap: 14px;
+    flex-wrap: wrap;
+}
+
+.ua-btn-outline,
+.ua-btn-primary {
+    padding: 10px 20px;
+    border-radius: 24px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    text-align: center;
+    white-space: nowrap;
+    flex: 1;
+    min-width: 120px;
 }
 
 .ua-btn-outline {
-    padding: 10px 20px;
-    border-radius: 24px;
     background: #ffffff;
     color: #1f4d35;
-    border: none;
-    font-weight: 500;
-    cursor: pointer;
+}
+
+.ua-btn-outline:hover {
+    background: #f0f0f0;
 }
 
 .ua-btn-primary {
-    padding: 10px 22px;
-    border-radius: 24px;
     background: #ff7a66;
     color: #ffffff;
-    border: none;
-    font-weight: 500;
-    cursor: pointer;
+}
+
+.ua-btn-primary:hover {
+    background: #ff6a55;
 }
 
 /* Dots */
@@ -126,7 +157,7 @@
     display: flex;
     justify-content: center;
     gap: 8px;
-    margin-top: 10px;
+    margin-top: 16px;
 }
 
 .ua-dots span {
@@ -134,10 +165,233 @@
     height: 8px;
     background: #d0d0d0;
     border-radius: 50%;
+    transition: all 0.3s ease;
 }
 
 .ua-dots .active {
     background: #3fa34d;
     width: 18px;
     border-radius: 10px;
+}
+
+/* ============================ */
+/* 📱 MOBILE BREAKPOINTS */
+/* ============================ */
+
+/* Tablet & Mobile (≤1024px) */
+@media (max-width: 1024px) {
+    .ua-wrapper {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .ua-card {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .ua-top {
+        gap: 16px;
+    }
+
+    .ua-info {
+        padding: 12px 14px;
+        min-width: 240px;
+    }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+    .ua-wrapper {
+        padding: 16px;
+        border-radius: 14px;
+        max-width: 100%;
+    }
+
+    .ua-card {
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    .ua-header {
+        margin-bottom: 14px;
+    }
+
+    .ua-header h3 {
+        font-size: 17px;
+    }
+
+    /* Stack doctor info and appointment info vertically */
+    .ua-doctor {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .ua-info {
+        width: 100%;
+        min-width: auto;
+        padding: 12px;
+    }
+
+    .ua-info-row {
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+
+    .ua-info-row span {
+        font-size: 13px;
+    }
+
+    /* Stack buttons vertically */
+    .ua-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .ua-btn-outline,
+    .ua-btn-primary {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 12px;
+    }
+
+    .ua-divider {
+        margin: 16px 0;
+    }
+
+    /* Adjust button text for mobile */
+    .ua-btn-primary {
+        white-space: normal;
+        line-height: 1.4;
+    }
+}
+
+/* Small Mobile (≤480px) */
+@media (max-width: 480px) {
+    .ua-wrapper {
+        padding: 14px;
+        border-radius: 12px;
+    }
+
+    .ua-card {
+        padding: 14px;
+        border-radius: 12px;
+    }
+
+    .ua-header h3 {
+        font-size: 16px;
+    }
+
+    .ua-view {
+        font-size: 13px;
+    }
+
+    .ua-doctor img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .ua-doctor h4 {
+        font-size: 15px;
+    }
+
+    .ua-doctor p {
+        font-size: 13px;
+    }
+
+    .ua-info {
+        padding: 10px 12px;
+        border-radius: 10px;
+    }
+
+    .ua-info-row {
+        margin-bottom: 8px;
+    }
+
+    .ua-info-row span {
+        font-size: 12px;
+    }
+
+    .ua-btn-outline,
+    .ua-btn-primary {
+        padding: 10px 14px;
+        font-size: 13px;
+        border-radius: 10px;
+    }
+
+    .ua-dots {
+        margin-top: 14px;
+    }
+}
+
+/* Very Small Mobile (≤375px) - iPhone SE, etc. */
+@media (max-width: 375px) {
+    .ua-wrapper {
+        padding: 12px;
+    }
+
+    .ua-card {
+        padding: 12px;
+    }
+
+    .ua-doctor {
+        gap: 10px;
+    }
+
+    .ua-doctor img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .ua-info-row {
+        gap: 8px;
+    }
+
+    /* Make the date and time icon text more compact */
+    .ua-info-row:nth-child(1) {
+        flex-wrap: wrap;
+    }
+
+    .ua-info-row:nth-child(1) span:nth-child(2) {
+        margin-right: 12px;
+    }
+}
+
+/* Extra Small Mobile (≤320px) */
+@media (max-width: 320px) {
+    .ua-wrapper {
+        padding: 10px;
+    }
+
+    .ua-card {
+        padding: 10px;
+    }
+
+    .ua-doctor {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .ua-doctor img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .ua-info {
+        padding: 8px 10px;
+    }
+
+    .ua-info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .ua-btn-outline,
+    .ua-btn-primary {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
 }

@@ -41,6 +41,12 @@
     border: 1px solid #eef2f7;
     border-radius: 12px;
     background: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.recent-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 /* Left section */
@@ -86,6 +92,7 @@
     font-size: 14px;
     font-weight: 600;
     margin: 0;
+    color: #111827;
 }
 
 .doctor-role {
@@ -102,4 +109,189 @@
     border-radius: 20px;
     font-size: 13px;
     cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.message-btn:hover {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+}
+
+/* ============================ */
+/* 📱 RESPONSIVE BREAKPOINTS ONLY */
+/* ============================ */
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+    .recent-card {
+        padding: 20px;
+        border-radius: 14px;
+    }
+    
+    .recent-header h3 {
+        font-size: 17px;
+    }
+    
+    .see-all {
+        font-size: 13px;
+    }
+    
+    .recent-grid {
+        gap: 14px;
+    }
+    
+    .recent-item {
+        padding: 12px 14px;
+    }
+    
+    .avatar {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .doctor-name {
+        font-size: 13px;
+    }
+    
+    .message-btn {
+        padding: 5px 14px;
+        font-size: 12px;
+    }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+    .recent-card {
+        padding: 18px;
+        margin-top: 14px;
+    }
+    
+    .recent-header {
+        margin-bottom: 16px;
+    }
+    
+    .recent-header h3 {
+        font-size: 16px;
+    }
+    
+    .recent-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .recent-item {
+        padding: 12px;
+        border-radius: 10px;
+    }
+    
+    .doctor-left {
+        gap: 10px;
+    }
+    
+    .avatar {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .status-dot {
+        width: 8px;
+        height: 8px;
+        bottom: 1px;
+        right: 1px;
+    }
+    
+    .doctor-name {
+        font-size: 13px;
+    }
+    
+    .doctor-role {
+        font-size: 11px;
+    }
+    
+    .message-btn {
+        padding: 5px 12px;
+        font-size: 12px;
+        border-radius: 18px;
+    }
+}
+
+/* Small Mobile (≤480px) */
+@media (max-width: 480px) {
+    .recent-card {
+        padding: 16px;
+        border-radius: 12px;
+    }
+    
+    .recent-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 14px;
+    }
+    
+    .recent-header h3 {
+        font-size: 15px;
+    }
+    
+    .see-all {
+        font-size: 12px;
+        align-self: flex-end;
+    }
+    
+    .recent-grid {
+        gap: 10px;
+    }
+    
+    .recent-item {
+        padding: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .doctor-left {
+        width: 100%;
+    }
+    
+    .message-btn {
+        width: 100%;
+        text-align: center;
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+}
+
+/* Very Small Mobile (≤375px) */
+@media (max-width: 375px) {
+    .recent-card {
+        padding: 14px;
+    }
+    
+    .recent-header h3 {
+        font-size: 14px;
+    }
+    
+    .avatar {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .doctor-name {
+        font-size: 12px;
+    }
+    
+    .doctor-role {
+        font-size: 10px;
+    }
+    
+    .recent-item {
+        padding: 8px 10px;
+    }
+    
+    .message-btn {
+        padding: 5px 10px;
+        font-size: 10px;
+    }
 }
